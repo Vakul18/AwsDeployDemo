@@ -1,0 +1,17 @@
+version : 0.2
+
+phases :
+  install:
+    runtime-versions:
+      dotnet: 6.0.202
+  
+  build:
+    commands:
+      - echo Build started on `date`
+      - dotnet publish DeployDemo.csproj  -c Release -o ./output --self-contained false -r linux-x64
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: ./output
+  
