@@ -1,6 +1,7 @@
-version: "3.9"
+version: "3.8"
 services:
     web:
         build: ./deploy
+        image: vakulkataria/ebdeplydotnet:latest
         ports:
             - "8000:80"

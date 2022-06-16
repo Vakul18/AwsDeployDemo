@@ -12,4 +12,5 @@ RUN dotnet publish -c Release -o ./output --self-contained false -r linux-x64
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
 COPY --from=build-env /app/output .
-ENTRYPOINT ["dotnet", "DeployDemo.dll"]
+EXPOSE 80
+ENTRYPOINT ["dotnet", "DeployDemo.dll"].
